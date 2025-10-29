@@ -2035,5 +2035,18 @@
         // Add current year to copyright
         document.querySelector('.copyright p').innerHTML = `&copy; ${new Date().getFullYear()} Sara Fathima. All Rights Reserved. | Built with passion for AI`;
     </script>
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
 </body>
 </html>
