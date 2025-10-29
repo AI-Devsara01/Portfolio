@@ -1300,6 +1300,86 @@
             .timeline-content:before {
                 left: -30px;
             }
+            .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Left side text */
+.about-text {
+  flex: 1 1 55%;
+  color: #ddd;
+  line-height: 1.7;
+}
+
+/* Right side image */
+.about-image {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Profile image styling */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #6b4eff;
+  box-shadow: 0 0 20px rgba(107, 78, 255, 0.5);
+}
+
+/* Floating icons animation */
+.floating-elements {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.floating-element {
+  position: absolute;
+  color: #9d8bff;
+  font-size: 1.5rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) { top: -60px; left: -60px; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: -80px; right: -50px; animation-delay: 1s; }
+.floating-element:nth-child(3) { bottom: -60px; left: -50px; animation-delay: 2s; }
+.floating-element:nth-child(4) { bottom: -70px; right: -60px; animation-delay: 3s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text, .about-image {
+    flex: 1 1 100%;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
         }
 
         @media (max-width: 480px) {
@@ -1393,43 +1473,56 @@
         </div>
     </div>
 </section>
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Learn more about my journey, skills, and passion for AI</p>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Learn more about my journey, skills, and passion for AI</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>AI Developer & Problem Solver</h3>
-                    <p>Based in Bengaluru, the heart of India's tech innovation, I am on the verge of completing my Bachelor's in Computer Applications with a specialization in AI & ML. My journey is fueled by a deep curiosity for how intelligent systems can solve real-world challenges.</p>
-                    
-                    <div class="highlight">
-                        <p>My internship at <strong>Nexinbe</strong> solidified my passion for building practical AI. I don't just build models; I engineer <strong>scalable, efficient, and user-centric solutions</strong> like boosting chatbot accuracy by 25% or cutting system latency by 40%.</p>
-                    </div>
-                    
-                    <p>I thrive in collaborative environments and am always eager to tackle the next big problem. When I'm not coding, you can find me exploring the latest AI research papers, participating in hackathons, or mentoring peers in AI concepts.</p>
-                    
-                    <p><strong>Current Focus:</strong> Actively seeking full-time roles as an AI Engineer, ML Engineer, or Software Developer where I can contribute to impactful projects.</p>
-                </div>
-                <div class="about-image">
-                    <div style="text-align: center;">
-  <img src="https://drive.google.com/uc?export=view&id=1WGpsMukGxhCi_zNRFLhHSwKKMROdNHZW" 
-       alt="Sara Fathima" 
-       class="profile-img">
-</div>
-                    <div class="floating-elements">
-                        <div class="floating-element"><i class="fas fa-robot"></i></div>
-                        <div class="floating-element"><i class="fas fa-brain"></i></div>
-                        <div class="floating-element"><i class="fas fa-code"></i></div>
-                        <div class="floating-element"><i class="fas fa-chart-line"></i></div>
-                    </div>
-                </div>
-            </div>
+    <div class="about-content">
+      <!-- About Text -->
+      <div class="about-text">
+        <h3>AI Developer & Problem Solver</h3>
+        <p>
+          Based in Bengaluru, the heart of India's tech innovation, I am on the verge of completing my Bachelor's in Computer Applications with a specialization in AI & ML. My journey is fueled by a deep curiosity for how intelligent systems can solve real-world challenges.
+        </p>
+
+        <div class="highlight">
+          <p>
+            My internship at <strong>Nexinbe</strong> solidified my passion for building practical AI. I don't just build models; I engineer
+            <strong>scalable, efficient, and user-centric solutions</strong> like boosting chatbot accuracy by 25% or cutting system latency by 40%.
+          </p>
         </div>
-    </section>
+
+        <p>
+          I thrive in collaborative environments and am always eager to tackle the next big problem. When I'm not coding, you can find me exploring the latest AI research papers, participating in hackathons, or mentoring peers in AI concepts.
+        </p>
+
+        <p>
+          <strong>Current Focus:</strong> Actively seeking full-time roles as an AI Engineer, ML Engineer, or Software Developer where I can contribute to impactful projects.
+        </p>
+      </div>
+
+      <!-- About Image -->
+      <div class="about-image">
+        <img
+          src="https://drive.google.com/uc?export=view&id=1WGpsMukGxhCi_zNRFLhHSwKKMROdNHZW"
+          alt="Sara Fathima"
+          class="profile-img"
+        >
+
+        <div class="floating-elements">
+          <div class="floating-element"><i class="fas fa-robot"></i></div>
+          <div class="floating-element"><i class="fas fa-brain"></i></div>
+          <div class="floating-element"><i class="fas fa-code"></i></div>
+          <div class="floating-element"><i class="fas fa-chart-line"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
